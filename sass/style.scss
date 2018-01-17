@@ -1,0 +1,180 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+
+$fontBase: 16px ('Lato', sans-serif);
+$colorBase: #cdb090;
+$borderBottom: 0.5px solid #381a5a;
+$fontColor: #381a5a;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+body {
+	font: $fontBase;
+	color: $fontColor;
+	background-color: lighten($colorBase, 20%);
+	
+}
+
+header {
+	.nav_mobile {
+		display: none;
+	}
+	.logo {
+		display: block;
+	    max-width: 330px;
+	    margin: 1em auto;
+	    	img {
+		    	width: 100%;
+	    	}
+	    &:focus {
+		    outline: none;
+	    }
+	}
+	.nav_desktop {
+		display: flex;
+			 ul {
+				display: inline-flex;
+			    place-content: space-between;
+			    width: 450px;
+			    margin: auto;
+			    	li > a {
+				    	color: $fontColor;
+						text-decoration: none;
+						font-size: 20px;
+			    	}	
+			    	li > a:hover {
+				    	border-bottom: $borderBottom;
+			    	}	
+			}
+	}
+}
+.intro_section {
+	.bg_img {
+		background-image: url('../img/bg.jpg');
+		height: 100vh;
+		width: 100%;
+		background-position: center center;
+		background-repeat: no-repeat;
+	    background-size: cover;
+	    margin: 2em 0 0;
+	    position: relative;
+	}
+	.intro_message {
+		position: absolute;
+	    top: 430px;
+	    left: 100px;
+	    transform: translateY(-50%);
+		color: white;
+			h1 {
+				font-weight: 300;
+				font-size: 6em;
+				text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+			}
+			h3 {
+				font-size: 2.8em;
+				padding: 0.1em 0;
+				text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.37);
+			}
+			.shop_now {
+				font-size: 2.2em;
+			    font-weight: 300;
+			    background-color: #440e65;
+			    color: #fff;
+			    padding: 0.6em 1.45em;
+			    display: inline-block;
+			    margin-top: 0.7em;
+			    text-align: center;
+			    text-decoration: none;
+			}
+			.shop_now:hover {
+				background-color: transparentize(#440e65, 0.2);
+				cursor: pointer;
+			}
+	}
+}
+.must_see_section, .fashion_beauty_section {
+	margin: 0 auto;
+    max-width: 1600px;
+    	h2 {
+			text-align: center;
+		    padding: 1em 0;
+		    font-size: 2.5em;
+		    font-weight: 300;
+    	}
+    	.three_images {
+	    	text-align: center;
+	    		a {
+		    		img {
+			    		max-width: 550px;
+					    width: 33%;
+					    padding: 0 0.1em;
+		    		}
+		    	}
+		    	a:hover {
+			    	opacity: 0.9;
+		    	}
+    	}
+}
+.fashion_beauty_section {
+	.fashion_beauty {
+		display: inline-block;
+		width: 49%;
+		float: left;
+		padding: 0 0 0 0.4em;
+			img {
+				width: 100%;
+			}
+			figcaption {
+				text-align: center;
+					.bold_text {
+						display: block;
+						font-weight: 900;
+						color: lighten($fontColor, 15%);
+					}
+					.bold_text:hover {
+						color: lighten($fontColor, 25%);
+					}
+			}
+	}
+	.fashion_beauty:last-child {
+		float: right;
+	}
+}
+footer {
+	height: 6em;
+    background-color: #aaa;
+    	.footer_content {
+	    	margin-top: 4em;
+	    	padding: 1.6em 0 0.7em;
+			text-align: center;
+				a {
+					color: lighten($colorBase, 85%);
+					text-decoration: none;
+					}	
+				a:hover {
+					color: $fontColor;
+				}
+				span {
+					color: #fff;
+				}
+    	}
+    	p {
+	    	text-align: center;
+			color: lighten($colorBase, 80%);
+    	}
+}
